@@ -71,6 +71,11 @@ services:
       CADVISOR_URL: "http://cadvisor:8080/"
       LOGSTASH_FIELDS: "service=monasca-agent-collector"
       KEYSTONE_DEFAULTS_ENABLED: "false"
+      DOCKER: "true"
+    privileged: true
+    volumes:
+      - "/:/host:ro"
+      - "/var/run/docker.sock:/var/run/docker.sock:rw"
     depends_on:
       - agent-forwarder
 
