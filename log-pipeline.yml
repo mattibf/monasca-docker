@@ -93,7 +93,7 @@ services:
       - elasticsearch
       - keystone
     ports:
-      - 5601:${MON_KIBANA_PORT}
+      - ${MON_KIBANA_PORT}:5601
 
   log-api:
     hostname: docker-host

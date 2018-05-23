@@ -92,7 +92,6 @@ services:
       KEYSTONE_URI: ${MON_KEYSTONE_URL}
       MONASCA_PLUGIN_ENABLED: ${MON_MONASCA_PLUGIN_ENABLED}
       BASE_PATH: ${MON_BASE_PATH}
-      KIBANA_PORT: ${MON_KIBANA_PORT}
     depends_on:
       - elasticsearch
     ports:
