@@ -36,6 +36,11 @@ HORIZON_URL=http://<ip_address:port>
 HORIZON_PATH=/dashboard
 
 ################################################################################
+# Configure the port for Grafana
+################################################################################
+MON_GRAFANA_PORT=3000
+
+################################################################################
 # Enable Kibana authorization via OpenStack Horizon
 ################################################################################
 MON_MONASCA_PLUGIN_ENABLED=True

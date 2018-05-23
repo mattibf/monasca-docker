@@ -259,7 +259,7 @@ services:
     volumes:
     - "${MON_DOCKER_VOL_ROOT}/grafana/data:/var/lib/grafana/data:Z"
     ports:
-      - "3000:3000"
+      - "${MON_GRAFANA_PORT}:3000"
     depends_on:
       - keystone
       - monasca
