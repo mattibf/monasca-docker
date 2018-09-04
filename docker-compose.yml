@@ -172,7 +172,6 @@ services:
     restart: on-failure
     environment:
       LOGSTASH_FIELDS: "service=monasca-api"
-      DELEGATE_AUTHORIZED_ROLES: "monitoring-delegate"
     depends_on:
       - influxdb
       - keystone
