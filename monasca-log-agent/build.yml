@@ -1,9 +1,9 @@
 repository: fest/log-agent
 variants:
-  - tag: 2.0.1
+  - tag: 2.0.2
     aliases:
       - :pike-{date}-{time}
     args:
-      LOGSTASH_PLUGIN_BRANCH: v1.0.2
+      LOGSTASH_PLUGIN_BRANCH: v1.0.4
       JRUBY_VERSION: 9.1-alpine
       LOGSTASH_VERSION: 2.4-alpine
