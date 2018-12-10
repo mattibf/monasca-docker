@@ -33,4 +33,4 @@ else
   cp /etc/monasca/log-metrics.conf.j2 /etc/monasca/log-metrics.conf
 fi
 
-logstash -f /etc/monasca/log-metrics.conf
+exec logstash -f /etc/monasca/log-metrics.conf

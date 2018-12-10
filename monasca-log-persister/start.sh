@@ -33,4 +33,4 @@ else
   cp /etc/monasca/log-persister.conf.j2 /etc/monasca/log-persister.conf
 fi
 
-logstash -f /etc/monasca/log-persister.conf
+exec logstash -f /etc/monasca/log-persister.conf

@@ -7,7 +7,7 @@ MONASCA_LOG_AGENT_WAIT_DELAY=${MONASCA_LOG_AGENT_WAIT_DELAY:-"5"}
 if [ "$MONASCA_WAIT_FOR_LOG_AGENT" = "true" ]; then
     RETRIES=$MONASCA_LOG_AGENT_WAIT_RETRIES \
       SLEEP_LENGTH=$MONASCA_LOG_AGENT_WAIT_DELAY \
-      /wait-for.sh "${MONASCA_LOG_AGENT_URI}" && /bin/logspout
+      /wait-for.sh "${MONASCA_LOG_AGENT_URI}" && exec /bin/logspout
 else
-    /bin/logspout
+    exec /bin/logspout
 fi

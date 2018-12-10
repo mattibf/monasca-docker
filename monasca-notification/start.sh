@@ -11,11 +11,11 @@ echo "Waiting for MySQL to become available..."
 success="false"
 for i in $(seq "$MYSQL_WAIT_RETRIES"); do
   mysqladmin status \
-      --host="$MYSQL_DB_HOST" \
-      --port="$MYSQL_DB_PORT" \
-      --user="$MYSQL_DB_USERNAME" \
-      --password="$MYSQL_DB_PASSWORD" \
-      --connect_timeout=10
+    --host="$MYSQL_DB_HOST" \
+    --port="$MYSQL_DB_PORT" \
+    --user="$MYSQL_DB_USERNAME" \
+    --password="$MYSQL_DB_PASSWORD" \
+    --connect_timeout=10
   if [ $? -eq 0 ]; then
     echo "MySQL is available, continuing..."
     success="true"
@@ -27,9 +27,9 @@ for i in $(seq "$MYSQL_WAIT_RETRIES"); do
 done
 
 if [ "$success" != "true" ]; then
-    echo "Unable to reach MySQL database! Exiting..."
-    sleep 1
-    exit 1
+  echo "Unable to reach MySQL database! Exiting..."
+  sleep 1
+  exit 1
 fi
 
 if [ -n "$KAFKA_WAIT_FOR_TOPICS" ]; then
@@ -61,4 +61,4 @@ else
   cp /config/notification.yaml.j2 /config/notification.yaml
 fi
 
-monasca-notification /config/notification.yaml
+exec monasca-notification /config/notification.yaml

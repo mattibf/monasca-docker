@@ -83,7 +83,7 @@ fi
 
 # Needed to allow utf8 use in the Monasca API
 export PYTHONIOENCODING=utf-8
-gunicorn --capture-output \
+exec gunicorn --capture-output \
   -n monasca-api \
   --worker-class="$GUNICORN_WORKER_CLASS" \
   --worker-connections="$GUNICORN_WORKER_CONNECTIONS" \

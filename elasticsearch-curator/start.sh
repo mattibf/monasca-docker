@@ -12,8 +12,8 @@ if [ "$WAIT_FOR_ELASTICSEARCH" = "true" ]; then
       SLEEP_LENGTH=$ELASTICSEARCH_WAIT_DELAY \
       /wait-for.sh "${ELASTICSEARCH_URI}" && \
         crontab /var/spool/cron/crontabs/curator && \
-        crond -f
+        exec crond -f
 else
     crontab /var/spool/cron/crontabs/curator && \
-      crond -f
+      exec crond -f
 fi

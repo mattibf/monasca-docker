@@ -33,4 +33,4 @@ else
   cp /etc/monasca/log-transformer.conf.j2 /etc/monasca/log-transformer.conf
 fi
 
-logstash -f /etc/monasca/log-transformer.conf
+exec logstash -f /etc/monasca/log-transformer.conf

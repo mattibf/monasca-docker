@@ -1,5 +1,5 @@
 ARG PYTHON_VERSION=2
-ARG TIMESTAMP_SLUG=pike-latest
+ARG TIMESTAMP_SLUG=2.2.0
 FROM fest/python:${PYTHON_VERSION}-${TIMESTAMP_SLUG}
 
 ARG PERSISTER_REPO=https://github.com/openstack/monasca-persister.git

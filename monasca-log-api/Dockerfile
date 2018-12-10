@@ -1,4 +1,4 @@
-ARG TIMESTAMP_SLUG=pike-latest
+ARG TIMESTAMP_SLUG=2.2.0
 FROM fest/python:2-${TIMESTAMP_SLUG}
 
 ARG LOG_API_REPO=https://github.com/openstack/monasca-log-api.git

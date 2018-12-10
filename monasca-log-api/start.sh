@@ -55,6 +55,6 @@ else
 fi
 
 export PYTHONIOENCODING=utf-8
-gunicorn \
-    --config /etc/monasca/log-api-gunicorn.conf \
-    --paste /etc/monasca/log-api-paste.ini
+exec gunicorn \
+  --config /etc/monasca/log-api-gunicorn.conf \
+  --paste /etc/monasca/log-api-paste.ini

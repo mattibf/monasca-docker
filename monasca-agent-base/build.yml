@@ -1,7 +1,7 @@
 repository: fest/agent-base
 variants:
-  - tag: 2.0.2
+  - tag: 2.0.3
     aliases:
       - :pike-{date}-{time}
     args:
-      TIMESTAMP_SLUG: pike-latest
+      TIMESTAMP_SLUG: 2.2.0

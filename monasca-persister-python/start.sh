@@ -35,4 +35,4 @@ else
   cp /etc/monasca-persister/persister.conf.j2 /etc/monasca-persister/persister.conf
 fi
 
-monasca-persister --config-file /etc/monasca-persister/persister.conf
+exec monasca-persister --config-file /etc/monasca-persister/persister.conf
