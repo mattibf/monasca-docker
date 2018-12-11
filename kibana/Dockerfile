@@ -46,4 +46,5 @@ RUN python /template.py /kibana.yml.j2 /opt/kibana/config/kibana.yml && \
   kibana plugin -i monasca-kibana-plugin -u file:///monasca-kibana-plugin.tar.gz && \
   rm -rf /monasca-kibana-plugin.tar.gz
 
-CMD /start.sh
+ENTRYPOINT ["/usr/local/bin/tini", "--", "docker-entrypoint.sh"]
+CMD ["/start.sh"]
