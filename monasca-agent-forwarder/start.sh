@@ -15,7 +15,7 @@ if [ "$KEYSTONE_DEFAULTS_ENABLED" = "true" ]; then
   export OS_PROJECT_DOMAIN_NAME=${OS_PROJECT_DOMAIN_NAME:-"Default"}
 fi
 
-template() {
+template () {
   if [ "$CONFIG_TEMPLATE" = "true" ]; then
     python /template.py "$1" "$2"
   else
@@ -33,4 +33,4 @@ fi
 
 template $AGENT_CONF/agent.yaml.j2 $AGENT_CONF/agent.yaml
 
-exec monasca-forwarder
+monasca-forwarder

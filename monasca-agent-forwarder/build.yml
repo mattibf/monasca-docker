@@ -1,7 +1,7 @@
 repository: fest/agent-forwarder
 variants:
-  - tag: 2.0.3
+  - tag: 2.0.2
     aliases:
       - :pike-{date}-{time}
     args:
-      MON_AGENT_BASE_VERSION: 2.0.3
+      MON_AGENT_BASE_VERSION: 2.0.2

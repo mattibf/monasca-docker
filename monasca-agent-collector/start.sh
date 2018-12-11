@@ -21,7 +21,7 @@ fi
 
 mkdir -p "$AGENT_PLUGINS"
 
-template() {
+template () {
   if [ "$CONFIG_TEMPLATE" = "true" ]; then
     python /template.py "$1" "$2"
   else
@@ -77,4 +77,4 @@ done
 
 template $AGENT_CONF/agent.yaml.j2 $AGENT_CONF/agent.yaml
 
-exec monasca-collector foreground
+monasca-collector foreground
