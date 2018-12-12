@@ -1,4 +1,4 @@
-FROM fest/storm:2.0.1
+FROM fest/storm:2.0.3
 
 ENV MAVEN_HOME /usr/share/maven
 
@@ -37,7 +37,7 @@ RUN apk add --no-cache --virtual build-dep maven git py2-pip python-dev git open
   git remote add origin $COMMON_REPO && \
   git fetch origin $COMMON_BRANCH && \
   git reset --hard FETCH_HEAD && \
-  mvn -B clean install $([ "$SKIP_COMMON_TESTS" = "true" ] && echo "-DskipTests") && \
+  mvn -B -q clean install $([ "$SKIP_COMMON_TESTS" = "true" ] && echo "-DskipTests") && \
   cd / && \
   rm -rf /monasca-common && \
   mkdir /monasca-thresh && cd /monasca-thresh && \
@@ -46,7 +46,7 @@ RUN apk add --no-cache --virtual build-dep maven git py2-pip python-dev git open
   git fetch origin $THRESH_BRANCH && \
   git reset --hard FETCH_HEAD && \
   cd thresh && \
-  mvn -B clean package $([ "$SKIP_THRESH_TESTS" = "true" ] && echo "-DskipTests") && \
+  mvn -B -q clean package $([ "$SKIP_THRESH_TESTS" = "true" ] && echo "-DskipTests") && \
   cp /monasca-thresh/thresh/target/*-SNAPSHOT-shaded.jar /monasca-thresh.jar && \
   cd / && \
   rm -rf /monasca-thresh && \

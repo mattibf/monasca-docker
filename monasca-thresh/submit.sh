@@ -108,7 +108,7 @@ else
   echo "Using Thresh Config file /storm/conf/thresh-config.yml. Contents:"
   cat /storm/conf/thresh-config.yml | grep -vi password
   echo "Submitting storm topology..."
-  storm jar /monasca-thresh.jar \
+  exec storm jar /monasca-thresh.jar \
     monasca.thresh.ThresholdingEngine \
     /storm/conf/thresh-config.yml \
     "$TOPOLOGY_NAME"
