@@ -1,6 +1,6 @@
-FROM alpine:3.5
+FROM alpine:3.8
 
-ARG STORM_VERSION=1.1.1
+ARG STORM_VERSION=1.1.3
 ARG STORM_KEYS=https://dist.apache.org/repos/dist/release/storm/KEYS
 ARG ASC_MIRROR=https://dist.apache.org/repos/dist/release/storm
 ARG SKIP_VERIFY=false
@@ -40,7 +40,7 @@ COPY storm_mirror.py clean_externals.py /
 #RUN rm /clean_externals.py
 
 RUN mkdir /storm && \
-  apk add --no-cache openjdk8-jre-base py2-jinja2 bash procps && \
+  apk add --no-cache openjdk8-jre-base py2-jinja2 bash procps tini && \
   apk add --no-cache --virtual build-dep gnupg curl py2-requests tar && \
   url=$(python /storm_mirror.py $STORM_VERSION) && \
   echo "Using mirror: $url" && \
@@ -64,4 +64,4 @@ COPY template.py heap.py entrypoint.sh /
 COPY templates /templates
 COPY logging /logging
 
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["/sbin/tini", "--", "/entrypoint.sh"]
