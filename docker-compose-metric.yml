@@ -104,7 +104,7 @@ services:
       KAFKA_DELETE_TOPIC_ENABLE: "true"
       KAFKA_TOPIC_CONFIG: segment.ms=900000 # 15m
       KAFKA_CREATE_TOPICS: "\
-        metrics:64:1,\
+        metrics:16:1,\
         alarm-state-transitions:12:1,\
         alarm-notifications:12:1,\
         retry-notifications:3:1,\
@@ -174,7 +174,7 @@ services:
     restart: unless-stopped
     environment:
       NO_STORM_CLUSTER: "true"
-      WORKER_MAX_HEAP_MB: "256"
+      WORKER_MAX_HEAP_MB: "768"
       LOGSTASH_FIELDS: "service=monasca-thresh"
       LOG_LEVEL: "info"
     depends_on:

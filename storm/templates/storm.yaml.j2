@@ -57,3 +57,4 @@ transactional.zookeeper.root: {{ TRANSACTIONAL_ZOOKEEPER_ROOT | default('/storm-
 
 topology.acker.executors: {{ TOPOLOGY_ACKER_EXECUTORS | default('1') }}
 topology.debug: {{ TOPOLOG_DEBUG | default('false') }}
+topology.max.spout.pending: {{ TOPOLOG_MAX_SPOUT_PENDING | default('500') }}
